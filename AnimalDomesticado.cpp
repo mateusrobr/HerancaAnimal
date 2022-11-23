@@ -4,7 +4,7 @@
 AnimalDomesticado::AnimalDomesticado()
     :nivelFelicidade(20), Animal()
 {
-    cout << "Construtor animalDomesticado\n";
+    //cout << "Construtor animalDomesticado\n";
 }
 
 AnimalDomesticado::AnimalDomesticado(const AnimalDomesticado& copia)
@@ -17,7 +17,7 @@ AnimalDomesticado::AnimalDomesticado(const string& especie, int idade, int sacie
     :Animal(especie,idade,saciedade, numPatas)
 {
     this->nivelFelicidade = nivelFelicidade;
-    cout << "Construtor animalDomesticado\n";
+    //cout << "Construtor animalDomesticado\n";
 }
 
 

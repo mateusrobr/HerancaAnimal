@@ -20,7 +20,7 @@ Animal::Animal(const string& especie, int idade, int saciedade, int numPatas){
     this->idade = idade;
     this->numPatas = numPatas;
     this->saciedade = saciedade;
-    cout << "Construtor animal\n";
+    //cout << "Construtor animal\n";
 }
 
 Animal::~Animal(){
