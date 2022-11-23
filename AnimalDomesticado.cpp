@@ -45,6 +45,14 @@ void AnimalDomesticado::interagir(){
     }
 }
 
+void AnimalDomesticado::aumentarNivFelicidade(){
+    if(this->nivelFelicidade < 50){
+        this->nivelFelicidade++;
+        return;
+    }
+    
+}
+
 void AnimalDomesticado::printAnimalDomestico(){
     cout << "Especie: " << getEspecie() << "\n";
     cout << "Idade: " << getIdade() << "\n";
@@ -60,7 +68,7 @@ void AnimalDomesticado::printAnimalDomestico() const{
 
 std::ostream& operator<<( std::ostream& out, const AnimalDomesticado& animalDomesticado){
     out << static_cast<Animal> (animalDomesticado);
-    out << animalDomesticado.nivelFelicidade << "\n";
+    out << "Nivel de Felicidade: " <<animalDomesticado.nivelFelicidade << "\n";
 
     return out;
 }

@@ -29,6 +29,8 @@ class AnimalDomesticado : public Animal
         void printAnimalDomestico();
         void printAnimalDomestico() const;
 
+        void aumentarNivFelicidade();
+
         AnimalDomesticado & operator=(const AnimalDomesticado&);
         bool operator==(const AnimalDomesticado&);
         bool operator!=(const AnimalDomesticado&);

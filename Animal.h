@@ -26,6 +26,10 @@ class Animal
 
         void alimentar(int = 1);
 
+        void diminuirSaciedade();
+
+        void setNumPatas(int = 0);
+
 //      Operadores
 
         Animal & operator=(const Animal&);

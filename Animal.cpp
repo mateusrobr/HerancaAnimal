@@ -42,12 +42,23 @@ int Animal::getSaciedade() const{
     return saciedade;
 }
 
+void Animal::setNumPatas(int numPatas){
+    this->numPatas = numPatas;
+}
 void Animal::alimentar(int alimento){
     if((this->saciedade + alimento) > 50 || alimento < 0){
         return;
     }
     this->saciedade += alimento;
     
+}
+
+void Animal::diminuirSaciedade(){
+    if(this->saciedade > 10){
+        this->saciedade -= 10;
+        return;
+    }
+
 }
 
 void Animal::printAnimal(){

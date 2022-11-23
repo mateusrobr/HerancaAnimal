@@ -18,15 +18,23 @@ class Cachorro : public AnimalDomesticado
         
         
         Cachorro();
-        Cachorro(const string&, int, int, int, int, int);
+        Cachorro(const string&, int, int, int, int, int, int);
         Cachorro(const Cachorro&);
         ~Cachorro();
 
         void latir();
+        void correr();
 
         void printCachorro();
+
+        Cachorro & operator=(const Cachorro &);
+        bool operator==(const Cachorro&);
+        bool operator!=(const Cachorro&);
+        Cachorro & operator!();
     private:
         int expectativaDeVida;
+        string habitat;
+        int quantidadeOrelhas;
 
 
     };
