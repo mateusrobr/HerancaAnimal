@@ -11,6 +11,11 @@ using std::cout;
 using std::cin;
 using std::ostream;
 
+#include <random>
+using std::rand;
+
+#include <time.h>
+
 class Cachorro : public AnimalDomesticado
 {
     friend ostream& operator<<(ostream&, const Cachorro&);
@@ -24,13 +29,22 @@ class Cachorro : public AnimalDomesticado
 
         void latir();
         void correr();
+        void farejar();
+
+        virtual void interagir();
+        virtual void funcaoSocial();
+
+        void ficarDeGuarda();
 
         void printCachorro();
+
+        virtual void alimentar();
 
         Cachorro & operator=(const Cachorro &);
         bool operator==(const Cachorro&);
         bool operator!=(const Cachorro&);
         Cachorro & operator!();
+
     private:
         int expectativaDeVida;
         string habitat;

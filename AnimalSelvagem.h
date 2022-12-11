@@ -2,6 +2,7 @@
 #define ANIMALSELVAGEM_H
 
 #include "Animal.h"
+
 class AnimalSelvagem : public Animal 
 {
     friend ostream& operator<<(ostream&, const AnimalSelvagem&);
@@ -11,7 +12,27 @@ class AnimalSelvagem : public Animal
         AnimalSelvagem(const string& , int , int , int , int );
         ~AnimalSelvagem();
 
-        void fugirDePredadores();
+        //virtual void alimentar(int = 1) = 0;
+        
+        
+        //virtual void fugirDePredadores() = 0;
+        //virtual void cacar() = 0;
+        //virtual void entrarEmCombate(/*Lobo &*/) = 0;
+
+        void printAnimalSelvagem();
+        void printAnimalSelvagem() const;
+
+        void setVida(int);
+        int getVida();
+        int getVida()const;
+        int getVelocidade();
+        int getVelocidade()const; 
+        int getNivAtaque();
+        int getNivAtaque() const;
+        int getNivPercepcao();
+        int getNivPercepcao()const;
+        int getNivFurtividade();
+        int getNivFurtividade()const;
 
         AnimalSelvagem& operator=(const AnimalSelvagem&);
         bool operator==(const AnimalSelvagem&);
@@ -19,6 +40,11 @@ class AnimalSelvagem : public Animal
         AnimalSelvagem& operator!();
     private:
         int nivelStress;
+        int vida;
+        int velocidade;
+        int nivAtaque;
+        int nivPercepcao;
+        int nivFurtividade;
 
 };
 #endif

@@ -12,7 +12,7 @@ class Animal
 {
     friend ostream& operator<<(ostream &, const Animal & );
     public:
-        Animal(/* args */);
+        Animal();
         Animal(const Animal&);
         Animal(const string&, int, int, int = 4);
         
@@ -20,15 +20,22 @@ class Animal
         int getIdade();
         int getNumPatas();
         int getSaciedade() const;
+        string getEspecie()const;
+        int getIdade() const;
+        int getNumPatas() const;
+        void setEspecie(const string&);
+        void setIdade(int);
 
         void printAnimal();
         void printAnimal() const;
 
-        void alimentar(int = 1);
+        virtual void alimentar() = 0;
 
         void diminuirSaciedade();
 
         void setNumPatas(int = 0);
+
+        void setSaciedade(int);
 
 //      Operadores
 

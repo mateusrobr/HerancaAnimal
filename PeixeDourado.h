@@ -23,6 +23,8 @@ class PeixeDourado : public AnimalDomesticado
 
         void nadar();
 
+        virtual void alimentar(int = 1) = 0;
+
         PeixeDourado & operator=(const PeixeDourado &);
         bool operator==(const PeixeDourado &);
         bool operator!=(const PeixeDourado &);

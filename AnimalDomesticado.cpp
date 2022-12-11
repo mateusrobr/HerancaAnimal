@@ -28,9 +28,11 @@ AnimalDomesticado::~AnimalDomesticado(){}
 int AnimalDomesticado::getNivelFelicidade(){
     return nivelFelicidade;
 }
+int AnimalDomesticado::getNivelFelicidade()const{
+    return nivelFelicidade;
+}
 
-
-void AnimalDomesticado::interagir(){
+/*void AnimalDomesticado::interagir(){
     int interacao;
     cout << "Escolha o tipo de interacao: \n";
     cout << "1 - Acariricar\n";
@@ -43,7 +45,7 @@ void AnimalDomesticado::interagir(){
     else if(interacao == 2){
         this->nivelFelicidade -= 5;
     }
-}
+}*/
 
 void AnimalDomesticado::aumentarNivFelicidade(){
     if(this->nivelFelicidade < 50){
@@ -53,35 +55,36 @@ void AnimalDomesticado::aumentarNivFelicidade(){
     
 }
 
+void AnimalDomesticado::setNivFelicidade(int nivelFelicidade){
+    this->nivelFelicidade = nivelFelicidade;
+}
+
 void AnimalDomesticado::printAnimalDomestico(){
-    cout << "Especie: " << getEspecie() << "\n";
-    cout << "Idade: " << getIdade() << "\n";
-    cout << "Numero de Patas: " << getNumPatas() << "\n";
-    cout << "Nivel de saciedade atual: " << getSaciedade() << "\n";
+    cout << "Nivel de Felicidade: " << this->nivelFelicidade << "\n";
 }
 
 void AnimalDomesticado::printAnimalDomestico() const{
     printAnimal();
-    cout << "Nivel de saciedade: ";
+    cout << "Nivel de felidade: " << nivelFelicidade << "\n";
 }
 
 
 std::ostream& operator<<( std::ostream& out, const AnimalDomesticado& animalDomesticado){
-    out << static_cast<Animal> (animalDomesticado);
+    //out << static_cast<Animal> (animalDomesticado);
     out << "Nivel de Felicidade: " <<animalDomesticado.nivelFelicidade << "\n";
 
     return out;
 }
 AnimalDomesticado & AnimalDomesticado::operator=(const AnimalDomesticado& ladoDireito){
-    *static_cast<Animal *>(this) = static_cast<Animal>( ladoDireito);
+    //*static_cast<Animal *>(this) = static_cast<Animal>( ladoDireito);
     this->nivelFelicidade = ladoDireito.nivelFelicidade;
     return *this;
 }
 
 bool AnimalDomesticado::operator==(const AnimalDomesticado& ladoDireito){
-    if((static_cast<Animal > (*this) == static_cast<Animal> (ladoDireito)) == false){
+    /*if((static_cast<Animal > (*this) == static_cast<Animal> (ladoDireito)) == false){
         return false;
-    }
+    }*/
     if(this->nivelFelicidade != ladoDireito.nivelFelicidade){
         return false;
     }

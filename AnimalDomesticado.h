@@ -22,14 +22,20 @@ class AnimalDomesticado : public Animal
         ~AnimalDomesticado();
 
         int getNivelFelicidade();
+        int getNivelFelicidade()const;
 
-
-        void interagir();
+        virtual void alimentar() = 0;
+        
+        virtual void interagir() = 0;
+        virtual void funcaoSocial() = 0;
 
         void printAnimalDomestico();
         void printAnimalDomestico() const;
 
         void aumentarNivFelicidade();
+        void diminuirNivFelicidade();
+
+        void setNivFelicidade(int);
 
         AnimalDomesticado & operator=(const AnimalDomesticado&);
         bool operator==(const AnimalDomesticado&);

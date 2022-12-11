@@ -41,17 +41,28 @@ int Animal::getNumPatas(){
 int Animal::getSaciedade() const{
     return saciedade;
 }
+string Animal::getEspecie()const {
+    return especie;
+}
+
+int Animal::getIdade()const {
+    return idade;
+}
+
+int Animal::getNumPatas()const{
+    return numPatas;
+}
 
 void Animal::setNumPatas(int numPatas){
     this->numPatas = numPatas;
 }
-void Animal::alimentar(int alimento){
+/*void Animal::alimentar(int alimento){
     if((this->saciedade + alimento) > 50 || alimento < 0){
         return;
     }
     this->saciedade += alimento;
     
-}
+}*/
 
 void Animal::diminuirSaciedade(){
     if(this->saciedade > 10){
@@ -59,6 +70,18 @@ void Animal::diminuirSaciedade(){
         return;
     }
 
+}
+
+void Animal::setSaciedade(int saciedade){
+    this->saciedade = saciedade;
+}
+
+void Animal::setEspecie(const string& especie){
+    this->especie = especie;
+}
+
+void Animal::setIdade(int idade){
+    this->idade = idade;
 }
 
 void Animal::printAnimal(){

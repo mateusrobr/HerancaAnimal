@@ -1,7 +1,7 @@
 #include "AnimalSelvagem.h"
 
 AnimalSelvagem::AnimalSelvagem()
-    :nivelStress(20), Animal()
+    :nivelStress(20), vida(50), velocidade(40), nivAtaque(20), nivPercepcao(20),Animal()
 {
 
 }
@@ -22,7 +22,7 @@ AnimalSelvagem::~AnimalSelvagem(){
 
 }
 
-void AnimalSelvagem::fugirDePredadores(){
+/*void AnimalSelvagem::fugirDePredadores(){
     cout << "O animal se sentiu ameacado e fugiu\n";
     if(this->nivelStress > 5){
         this->nivelStress -= 5;
@@ -30,25 +30,47 @@ void AnimalSelvagem::fugirDePredadores(){
         return;
     }
 
+}*/
+
+void AnimalSelvagem::setVida(int novaVida){
+    this->vida = novaVida;
+}
+int AnimalSelvagem::getVida(){
+    return vida;
+}
+int AnimalSelvagem::getVelocidade(){
+    return velocidade;
+}
+
+int AnimalSelvagem::getNivAtaque(){
+    return nivAtaque;
+}
+int AnimalSelvagem::getNivPercepcao(){
+    return nivPercepcao;
+}
+
+void AnimalSelvagem::printAnimalSelvagem(){
+    printAnimal();
+    cout << "Nivel de stress: " << this->nivelStress << "\n";
 }
 
 ostream& operator<<(ostream& out, const AnimalSelvagem& animalSelvagem){
-    out << static_cast<Animal> (animalSelvagem);
+    //out << static_cast<Animal> (animalSelvagem);
     out << "Nilve de Stress: " << animalSelvagem.nivelStress << "\n";
 
     return out;
 }
 
 AnimalSelvagem& AnimalSelvagem::operator=(const AnimalSelvagem& ladoDireito){
-    *static_cast<Animal *>(this) = static_cast<Animal>( ladoDireito);
+    //*static_cast<Animal *>(this) = static_cast<Animal>( ladoDireito);
     this->nivelStress = ladoDireito.nivelStress;
     return *this;
 }
 
 bool AnimalSelvagem::operator==(const AnimalSelvagem& ladoDireito){
-    if((static_cast<Animal > (*this) == static_cast<Animal> (ladoDireito)) == false){
+    /*if((static_cast<Animal > (*this) == static_cast<Animal> (ladoDireito)) == false){
         return false;
-    }
+    }*/
     if(this->nivelStress != ladoDireito.nivelStress){
         return false;
     }
