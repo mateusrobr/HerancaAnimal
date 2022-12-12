@@ -29,10 +29,6 @@ class AnimalSelvagem : public Animal
         int getVelocidade()const; 
         int getNivAtaque();
         int getNivAtaque() const;
-        int getNivPercepcao();
-        int getNivPercepcao()const;
-        int getNivFurtividade();
-        int getNivFurtividade()const;
 
         AnimalSelvagem& operator=(const AnimalSelvagem&);
         bool operator==(const AnimalSelvagem&);
@@ -43,8 +39,7 @@ class AnimalSelvagem : public Animal
         int vida;
         int velocidade;
         int nivAtaque;
-        int nivPercepcao;
-        int nivFurtividade;
+
 
 };
 #endif

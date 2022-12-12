@@ -1,7 +1,7 @@
 #include "AnimalSelvagem.h"
 
 AnimalSelvagem::AnimalSelvagem()
-    :nivelStress(20), vida(50), velocidade(40), nivAtaque(20), nivPercepcao(20),Animal()
+    :nivelStress(20), vida(50), velocidade(40), nivAtaque(20),Animal()
 {
 
 }
@@ -45,13 +45,20 @@ int AnimalSelvagem::getVelocidade(){
 int AnimalSelvagem::getNivAtaque(){
     return nivAtaque;
 }
-int AnimalSelvagem::getNivPercepcao(){
-    return nivPercepcao;
-}
 
 void AnimalSelvagem::printAnimalSelvagem(){
     printAnimal();
     cout << "Nivel de stress: " << this->nivelStress << "\n";
+    cout << "Vida: " << this->vida << "\n";
+    cout << "Velocidade: " << this->velocidade << "\n";
+    cout << "Nivel de Ataque: " << this->nivAtaque << "\n";
+}
+void AnimalSelvagem::printAnimalSelvagem()const{
+    printAnimal();
+    cout << "Nivel de stress: " << this->nivelStress << "\n";
+    cout << "Vida: " << this->vida << "\n";
+    cout << "Velocidade: " << this->velocidade << "\n";
+    cout << "Nivel de Ataque: " << this->nivAtaque << "\n";
 }
 
 ostream& operator<<(ostream& out, const AnimalSelvagem& animalSelvagem){
