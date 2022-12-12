@@ -5,6 +5,19 @@ Terrier::Terrier()
 {
 
 }
+Terrier::Terrier(const string& especie, int idade, int saciedade, int numPatas, int nivelFelicidade, int expectativaDeVida, int quantidadeOrelhas, const string& RACA)
+    :RACA(RACA), Cachorro(especie,idade,saciedade,numPatas,nivelFelicidade,expectativaDeVida,quantidadeOrelhas)
+{
+
+}
+Terrier::Terrier(const Terrier& copia)
+    :Cachorro(copia)
+{
+    this->RACA = copia.RACA;
+
+}
+
+
 
 Terrier::~Terrier(){
 
@@ -49,4 +62,25 @@ ostream& operator<<(ostream& out, const Terrier & terrier){
     out << static_cast<Cachorro>(terrier);
     out << "Raca: " << terrier.RACA << "\n";
     return out;
+}
+
+bool Terrier::operator==(const Terrier & ladoDireito){
+    if((static_cast<Cachorro>(*this) == static_cast<Cachorro>(ladoDireito)) == false){
+        return false;
+    }
+    if(this->RACA != ladoDireito.RACA){
+        return false;
+    }
+    return true;
+
+}
+bool Terrier::operator!=(const Terrier& ladoDireito){
+    return !(*this == ladoDireito);
+}
+
+Terrier& Terrier::operator=(const Terrier& ladoDireito){
+    *static_cast<Cachorro*>(this) = static_cast<Cachorro>(ladoDireito);
+    this->RACA = ladoDireito.RACA;
+
+    return *this;
 }

@@ -42,8 +42,8 @@ int main(){
     }
     delete cachorro;*/
 
-    Bordercollie collie1;
-    Bordercollie collie2("Caninus", 3, 30, 4, 10, 18, 2, "teste");
+    Terrier collie1;
+    Terrier collie2("Caninus", 3, 30, 4, 10, 18, 2, "teste");
 
     cout << "Collie1\n";
     cout<< collie1;

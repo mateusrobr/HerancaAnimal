@@ -8,11 +8,16 @@ class Terrier : public Cachorro
     friend ostream& operator<<(ostream&, const Terrier&);
     public:
         Terrier();
+        Terrier(const string&, int, int, int, int, int, int, const string&);
         Terrier(const Terrier&);
 
         virtual void funcaoSocial();
 
         void cacar();
+
+        bool operator==(const Terrier&);
+        bool operator!=(const Terrier&);
+        Terrier& operator=(const Terrier&);
 
         ~Terrier();
     private:
