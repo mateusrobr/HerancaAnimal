@@ -78,7 +78,7 @@ void Cachorro::funcaoSocial(){
 }
 
 void Cachorro::ficarDeGuarda(){
-    srand(time(NULL));
+    //srand(time(NULL));
     cout << "O cachorro fica de prontidao pronto para avisar qualquer coisa...\n";
     if(rand() % 10 > 5){
         latir();

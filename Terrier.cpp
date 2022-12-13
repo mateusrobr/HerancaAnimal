@@ -44,7 +44,7 @@ void Terrier::funcaoSocial(){
 }
 
 void Terrier::cacar(){
-    srand(time(NULL));
+    //srand(time(NULL));
     cout << "O cachorro esta procurando alguma presa..\n";
     if(rand() < 3 % 10 ){
         cout << "Achou algum roedor!!\n";

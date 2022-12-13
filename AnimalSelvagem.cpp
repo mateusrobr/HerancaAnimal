@@ -10,12 +10,18 @@ AnimalSelvagem::AnimalSelvagem(const AnimalSelvagem& copia)
     :Animal(copia)
 {
     this->nivelStress = copia.nivelStress;
+    this->vida = copia.vida;
+    this->velocidade = copia.velocidade;
+    this->nivAtaque = copia.nivAtaque;
 }
 
-AnimalSelvagem::AnimalSelvagem(const string& especie, int idade, int saciedade, int numPatas, int nivelStress)
+AnimalSelvagem::AnimalSelvagem(const string& especie, int idade, int saciedade, int numPatas, int nivelStress, int vida, int velocidade, int nivAtaque)
     :Animal(especie,idade,saciedade, numPatas)
 {
     this->nivelStress = nivelStress;
+    this->vida = vida;
+    this->velocidade = velocidade;
+    this->nivAtaque = nivAtaque;
 }
 
 AnimalSelvagem::~AnimalSelvagem(){
@@ -33,7 +39,9 @@ AnimalSelvagem::~AnimalSelvagem(){
 }*/
 
 void AnimalSelvagem::setVida(int novaVida){
-    this->vida = novaVida;
+    if(isAlive()){
+        this->vida = novaVida;
+    }
 }
 int AnimalSelvagem::getVida(){
     return vida;
@@ -44,6 +52,48 @@ int AnimalSelvagem::getVelocidade(){
 
 int AnimalSelvagem::getNivAtaque(){
     return nivAtaque;
+}
+int AnimalSelvagem::getVida()const{
+    return vida;
+}
+int AnimalSelvagem::getVelocidade()const{
+    return velocidade;
+}
+
+int AnimalSelvagem::getNivAtaque()const{
+    return nivAtaque;
+}
+
+int AnimalSelvagem::getNivelStress(){
+    return this->nivelStress;
+}
+
+int AnimalSelvagem::getNivelStress() const{
+    return this->nivelStress;
+}
+
+void AnimalSelvagem::aumentoVelocidade(){
+    this->velocidade++;
+}
+
+void AnimalSelvagem::aumentoNivAtaque(){
+    this->nivAtaque += 3;
+}
+
+bool AnimalSelvagem::isAlive(){
+    return (this->vida > 0);
+}
+
+void AnimalSelvagem::setNivelStress(int nivelStress){
+    this->nivelStress = nivelStress;
+}
+
+void AnimalSelvagem::setVelocidade(int velocidade){
+    this->velocidade = velocidade;
+}
+
+void AnimalSelvagem::setNivAtaque(int nivAtaque){
+    this->nivAtaque = nivAtaque;
 }
 
 void AnimalSelvagem::printAnimalSelvagem(){

@@ -9,7 +9,7 @@ class AnimalSelvagem : public Animal
     public:
         AnimalSelvagem(/* args */);
         AnimalSelvagem(const AnimalSelvagem &);
-        AnimalSelvagem(const string& , int , int , int , int );
+        AnimalSelvagem(const string& , int , int , int , int , int, int, int);
         ~AnimalSelvagem();
 
         //virtual void alimentar(int = 1) = 0;
@@ -21,6 +21,8 @@ class AnimalSelvagem : public Animal
 
         void printAnimalSelvagem();
         void printAnimalSelvagem() const;
+        void aumentoVelocidade();
+        void aumentoNivAtaque();
 
         void setVida(int);
         int getVida();
@@ -29,6 +31,14 @@ class AnimalSelvagem : public Animal
         int getVelocidade()const; 
         int getNivAtaque();
         int getNivAtaque() const;
+        int getNivelStress();
+        int getNivelStress() const;
+
+        void setNivelStress(int);
+        void setVelocidade(int);
+        void setNivAtaque(int);
+
+        bool isAlive();
 
         AnimalSelvagem& operator=(const AnimalSelvagem&);
         bool operator==(const AnimalSelvagem&);

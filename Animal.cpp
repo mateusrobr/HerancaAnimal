@@ -15,12 +15,12 @@ Animal::Animal(const Animal & copia){
 
 }
 
-Animal::Animal(const string& especie, int idade, int saciedade, int numPatas){
+Animal::Animal(const string& especie, int idade, int saciedade, int numPatas)
+{
     this->especie = especie;
     this->idade = idade;
     this->numPatas = numPatas;
     this->saciedade = saciedade;
-    //cout << "Construtor animal\n";
 }
 
 Animal::~Animal(){

@@ -54,6 +54,8 @@ class Animal
         int numPatas;
 
         int saciedade;
+
+        bool isAlive;
         
 };
 

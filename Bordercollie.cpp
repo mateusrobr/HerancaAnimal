@@ -43,7 +43,7 @@ void Bordercollie::funcaoSocial(){
 }
 
 void Bordercollie::pastorear(){
-    srand(time(NULL));
+    //srand(time(NULL));
     cout << "Cachorro esta tentando cumprir suas funcoes...\n";
     if(rand() % 10 < 2){
         cout << "Uma ovelha fugiu!!\n";
