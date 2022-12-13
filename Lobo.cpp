@@ -82,7 +82,7 @@ void Lobo::cacar(){
     }
     else if(rand_Number < 6 && rand_Number >= 1){
         cout << "Encontrou uma presa pequena!\n";
-        Presa* presa = new Presa("Esquilo", 1, 20, 4, 40, 5, 40, 1);
+        Presa* presa = new Presa("Esquilo", 1, 20, 4, 40, 5, 40, 1, "Nenhum");
         
         if(presa->getVelocidade() < this->getVelocidade() + 5){
             
@@ -100,7 +100,7 @@ void Lobo::cacar(){
     else if (rand_Number > 6 && rand_Number <= 9)
     {
         cout << "Encontrou uma presa media!\n";
-        Presa* presa = new Presa("Capivara", 3, 40, 4, 40, 20, 25, 1);
+        Presa* presa = new Presa("Capivara", 3, 40, 4, 40, 20, 25, 1, "Nenhum");
         if(presa->getVelocidade() < getVelocidade() - 5 && presa->getVida() <= getNivAtaque() ){
             
             levarParaToca(*presa);
@@ -120,7 +120,7 @@ void Lobo::cacar(){
     }
 
     cout << "Encontrou uma presa grande!\n";
-    Presa* presa = new Presa("Alce", 3, 40, 4, 40, 50, 25, 20);
+    Presa* presa = new Presa("Alce", 3, 40, 4, 40, 50, 25, 20, "Chifres");
     int escolha;
     cout << "Voce se sente capaz de cacar uma presa grande? A presa pode revidar..\n";
     cout << "1 - Sim\n";
@@ -160,6 +160,11 @@ void Lobo::cacar(){
 
     delete presa;
     
+}
+
+void Lobo::uivar(){
+    cout << "AUUUUUUUUUUUUUUUUUUUU\n";
+    setNivelStress(getNivelStress() - 1);
 }
 
 void Lobo::levarParaToca(const Presa& presa){
@@ -257,5 +262,11 @@ Lobo& Lobo::operator=(const Lobo& ladoDireito){
         this->toca[i] = new Presa(*  dynamic_cast<Presa*>( ladoDireito.toca[i] )  ) ;
     }
 
+    return *this;
+}
+
+Lobo& Lobo::operator!(){
+    cout << "Voce tropecou!\n";
+    setVida(getVida() - 1);
     return *this;
 }

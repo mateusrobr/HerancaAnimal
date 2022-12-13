@@ -47,19 +47,42 @@ void Cachorro::alimentar(){
     setSaciedade(getSaciedade() + valorNutritivo);
 }
 
-void Cachorro::interagir(){
+void Cachorro::interagir(Animal& animal){
     int interacao;
-    cout << "Escolha o tipo de interacao: \n";
-    cout << "1 - Acariricar\n";
-    cout << "2 - Atazanar\n";
-    cout << "Escolha: ";
-    cin >> interacao;
-    if(interacao == 1 ){
-        setNivFelicidade(getNivelFelicidade() + 5);
+
+
+
+    cout << "O cachorro encontra outro animal..\n";
+    if(typeid(animal).name() == typeid(Lobo).name()){
+        Lobo *loboPtr = dynamic_cast<Lobo*>(&animal);
+        cout << "O cachorro e o lobo nao se estranharam...\n";
+        latir();
+        loboPtr->uivar();
+        return;
     }
-    else if(interacao == 2){
-        setNivFelicidade(getNivelFelicidade() - 5);
+    else if(typeid(animal).name() == typeid(Cachorro).name()){
+        Cachorro *cachorroPtr = dynamic_cast<Cachorro*>(&animal);
+        cout << "Os cachorros ficaram felizes de se encontrar!\n";
+        latir();
+        cachorroPtr->latir();
+        return;
     }
+    else if(typeid(animal).name() == typeid(Presa).name()){
+        cout << "O peixe e " << animal.getEspecie() << " ficam um pouco apreensivos na presenca um do outro...\n";
+        latir();
+        this->setNivFelicidade(getNivelFelicidade() - 5);
+        return;
+    }
+    else if(typeid(animal).name() == typeid(PeixeDourado).name()){
+        PeixeDourado *peixeDourado = dynamic_cast<PeixeDourado*>(&animal);
+        cout << "O cachorro nao consegue interagir muito bem com o Peixe...!\n";
+        latir();
+        peixeDourado->nadar();
+        return;
+    }
+    cout << "Os animais preferiram se evitar..\n";
+
+
 }
 
 void Cachorro::funcaoSocial(){

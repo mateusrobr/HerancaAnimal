@@ -3,6 +3,10 @@
 
 #include "AnimalDomesticado.h"
 
+#include "Lobo.h"
+#include "Presa.h"
+#include "PeixeDourado.h"
+
 #include <string>
 using std::string;
 
@@ -31,7 +35,7 @@ class Cachorro : public AnimalDomesticado
         void correr();
         void farejar();
 
-        virtual void interagir();
+        virtual void interagir( Animal&);
         virtual void funcaoSocial();
 
         void ficarDeGuarda();

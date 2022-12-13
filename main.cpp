@@ -34,21 +34,13 @@ int main(){
     srand(time(0));
     
     Lobo lobo("Lobo", 1, 20, 4, 20, 20, 100, 40);
-    Lobo lobo2;
+    Cachorro cachorro;
+    PeixeDourado peixe;
+    Presa presa;
+    Bordercollie border;
+    Terrier terrier;
 
-    lobo.cacar();
-    lobo.cacar();
-    lobo.cacar();
-    lobo.cacar();
-    lobo.printToca();
-    cout << "Outra toca\n";
-    lobo2.printToca();
-
-    lobo2 = lobo;
-
-    lobo.printToca();
-    cout << "outra toca\n";
-    lobo2.printToca();
+    cachorro.interagir(presa);
 
 
 

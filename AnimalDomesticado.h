@@ -26,7 +26,7 @@ class AnimalDomesticado : public Animal
 
         virtual void alimentar() = 0;
         
-        virtual void interagir() = 0;
+        virtual void interagir(Animal&) = 0;
         virtual void funcaoSocial() = 0;
 
         void printAnimalDomestico();

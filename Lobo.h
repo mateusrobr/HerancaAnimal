@@ -20,9 +20,12 @@ class Lobo : public AnimalSelvagem
         void printToca();
         void levarParaToca(const Presa&);
 
+        void uivar();
+
         bool operator==(const Lobo&);
         bool operator!=(const Lobo&);
         Lobo& operator=(const Lobo&);
+        Lobo& operator!();
 
         ~Lobo();
     private:

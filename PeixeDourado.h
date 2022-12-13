@@ -3,6 +3,9 @@
 
 #include "AnimalDomesticado.h"
 
+#include "Lobo.h"
+#include "Cachorro.h"
+
 #include <string>
 using std::string;
 
@@ -23,7 +26,9 @@ class PeixeDourado : public AnimalDomesticado
 
         void nadar();
 
-        virtual void alimentar(int = 1) = 0;
+        virtual void alimentar();
+        virtual void interagir(Animal&);
+        virtual void funcaoSocial();
 
         PeixeDourado & operator=(const PeixeDourado &);
         bool operator==(const PeixeDourado &);

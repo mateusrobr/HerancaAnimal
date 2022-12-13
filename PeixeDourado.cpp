@@ -28,9 +28,48 @@ PeixeDourado::~PeixeDourado(){
 
 }
 
+void PeixeDourado::alimentar(){
+    int valorNutritivo;
+    
+    cout << "Descreva o alimento que voce vai oferecer: \n";
+    cout << "Valor nutritivo: ";
+    cin >> valorNutritivo;
+    if((this->getSaciedade() + valorNutritivo) > 50 || valorNutritivo < 0){
+        return;
+    }
+    setSaciedade(getSaciedade() + valorNutritivo);
+}
+
+void PeixeDourado::interagir(Animal& animal){
+    cout << "O peixe encontra outro animal..\n";
+    if(typeid(animal).name() == typeid(Lobo).name()){
+        cout << "O peixe e o lobo nao conseguem interagir um com o outro...\n";
+        nadar();
+    }
+    else if(typeid(animal).name() == typeid(Cachorro).name() || typeid(animal).name()){
+        cout << "O peixe e o Cachorro nao conseguem interagir um com o outro...\n";
+        nadar();
+    }
+    else if(typeid(animal).name() == typeid(Presa).name()){
+        cout << "O peixe e " << animal.getEspecie() << " nao conseguem interagir um com o outro...\n";
+        nadar();
+    }
+    else if(typeid(animal).name() == typeid(PeixeDourado).name()){
+        cout << "Os peixes conseguem interagir um com o outro!\n";
+        nadar();
+    }
+}
+
+void PeixeDourado::funcaoSocial(){
+    cout << "Funcao social do peixe eh ser bonito\n";
+    setNivFelicidade(getNivelFelicidade() + 1);
+}
+
+
 void PeixeDourado::nadar(){
     cout << "brl brl brl!\n";
     diminuirSaciedade();
+    aumentarNivFelicidade();
 }
 
 ostream& operator<<(ostream& out, const PeixeDourado & peixeDourado){
