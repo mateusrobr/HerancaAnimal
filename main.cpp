@@ -33,7 +33,7 @@ using std::vector;
 int main(){
     srand(time(0));
     
-    /*vector<Animal*> animais;
+    vector<Animal*> animais;
     animais.push_back(new Cachorro());
     animais.push_back(new Terrier());
     animais.push_back(new Bordercollie());
@@ -95,17 +95,7 @@ int main(){
         animaisItr++;
         delete animais[i];
         animais.erase(animaisItr);
-    }*/
-
-    Lobo lobo("Lobo", 4,20,4,10,40,34,15);
-    cout << lobo;
-    lobo.cacar();
-    lobo.cacar();
-    lobo.cacar();
-    lobo.alimentar();
-    cout << "Apos o lobo cacar e se alimentar:\n";
-    cout << lobo;
- 
+    }
 
 
 
