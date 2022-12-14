@@ -32,20 +32,6 @@ int AnimalDomesticado::getNivelFelicidade()const{
     return nivelFelicidade;
 }
 
-/*void AnimalDomesticado::interagir(){
-    int interacao;
-    cout << "Escolha o tipo de interacao: \n";
-    cout << "1 - Acariricar\n";
-    cout << "2 - Atazanar\n";
-    cout << "Escolha: ";
-    cin >> interacao;
-    if(interacao == 1 ){
-        this->nivelFelicidade += 5;
-    }
-    else if(interacao == 2){
-        this->nivelFelicidade -= 5;
-    }
-}*/
 
 void AnimalDomesticado::aumentarNivFelicidade(){
     if(this->nivelFelicidade < 50){

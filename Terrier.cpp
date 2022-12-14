@@ -84,3 +84,8 @@ Terrier& Terrier::operator=(const Terrier& ladoDireito){
 
     return *this;
 }
+
+Terrier& Terrier::operator!(){
+    setSaciedade(getSaciedade() - 1);
+    return *this;
+}

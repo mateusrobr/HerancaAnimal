@@ -14,6 +14,7 @@ class Lobo : public AnimalSelvagem
         Lobo();
         Lobo(const Lobo&);
         Lobo(const string& , int , int , int , int , int, int, int);
+        ~Lobo();
 
         virtual void alimentar();
         void cacar();
@@ -27,7 +28,6 @@ class Lobo : public AnimalSelvagem
         Lobo& operator=(const Lobo&);
         Lobo& operator!();
 
-        ~Lobo();
     private:
 
         vector<Animal *> toca;

@@ -74,6 +74,7 @@ void PeixeDourado::nadar(){
 
 ostream& operator<<(ostream& out, const PeixeDourado & peixeDourado){
     //out << static_cast<AnimalDomesticado> (peixeDourado);
+    peixeDourado.printAnimalDomestico();
     out << "Expectativa de Vida: " << peixeDourado.expectativaDeVida << "\n";
     out << "Habitat: " << peixeDourado.habitat << "\n";
     out << "Numero de Barbatanas: " << peixeDourado.numBarbatana << "\n";
@@ -81,7 +82,12 @@ ostream& operator<<(ostream& out, const PeixeDourado & peixeDourado){
 
 }
 PeixeDourado & PeixeDourado::operator=(const PeixeDourado & ladoDireito){
-   // *static_cast<AnimalDomesticado *>(this) = static_cast<AnimalDomesticado>( ladoDireito);
+    this->setEspecie(ladoDireito.getEspecie());
+    this->setIdade(ladoDireito.getIdade());
+    this->setNumPatas(ladoDireito.getNumPatas());
+    this->setSaciedade(ladoDireito.getSaciedade());
+
+    this->setNivFelicidade(ladoDireito.getNivelFelicidade());
     this->expectativaDeVida = ladoDireito.expectativaDeVida;
     this->habitat = ladoDireito.habitat;
     this->numBarbatana = ladoDireito.numBarbatana;
@@ -92,6 +98,22 @@ bool PeixeDourado::operator==(const PeixeDourado & ladoDireito){
     /*if((static_cast<AnimalDomesticado > (*this) == static_cast<AnimalDomesticado> (ladoDireito)) == false){
         return false;
     }*/
+    if(this->getEspecie() != ladoDireito.getEspecie()){
+        return false;
+    }
+    if(this->getIdade() != ladoDireito.getIdade()){
+        return false;
+    }
+    if(this->getNumPatas() != ladoDireito.getNumPatas()){
+        return false;
+    }
+    if(this->getSaciedade() != ladoDireito.getSaciedade()){
+        return false;
+    }
+    if(this->getNivelFelicidade() != ladoDireito.getNivelFelicidade()){
+        return false;
+    }
+
     if(this->expectativaDeVida != ladoDireito.expectativaDeVida){
         return false;
     }

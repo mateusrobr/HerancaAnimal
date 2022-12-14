@@ -80,7 +80,12 @@ bool Bordercollie::operator!=(const Bordercollie& ladoDireito){
 
 Bordercollie& Bordercollie::operator=(const Bordercollie& copia){
     *static_cast<Cachorro*>(this) = static_cast<Cachorro>(copia);
-    //*static_cast<AnimalDomesticado *>(this) = static_cast<AnimalDomesticado>( ladoDireito);
     this->RACA = copia.RACA;
+    return *this;
+}
+
+Bordercollie& Bordercollie::operator!(){
+    setSaciedade(getSaciedade() - 1);
+
     return *this;
 }

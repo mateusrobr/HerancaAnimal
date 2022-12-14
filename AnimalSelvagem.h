@@ -12,13 +12,6 @@ class AnimalSelvagem : public Animal
         AnimalSelvagem(const string& , int , int , int , int , int, int, int);
         ~AnimalSelvagem();
 
-        //virtual void alimentar(int = 1) = 0;
-        
-        
-        //virtual void fugirDePredadores() = 0;
-        //virtual void cacar() = 0;
-        //virtual void entrarEmCombate(/*Lobo &*/) = 0;
-
         void printAnimalSelvagem();
         void printAnimalSelvagem() const;
         void aumentoVelocidade();

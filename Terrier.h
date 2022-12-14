@@ -10,6 +10,7 @@ class Terrier : public Cachorro
         Terrier();
         Terrier(const string&, int, int, int, int, int, int, const string&);
         Terrier(const Terrier&);
+        ~Terrier();
 
         virtual void funcaoSocial();
 
@@ -18,8 +19,8 @@ class Terrier : public Cachorro
         bool operator==(const Terrier&);
         bool operator!=(const Terrier&);
         Terrier& operator=(const Terrier&);
+        Terrier& operator!();
 
-        ~Terrier();
     private:
 
         string RACA;

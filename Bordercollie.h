@@ -10,16 +10,17 @@ class Bordercollie : public Cachorro
         Bordercollie();
         Bordercollie(const string&, int, int, int, int, int, int, const string&);
         Bordercollie(const Bordercollie &);
+        ~Bordercollie();
 
         virtual void funcaoSocial();
 
         void pastorear();
         
-        ~Bordercollie();
 
         Bordercollie& operator=(const Bordercollie&);
         bool operator==(const Bordercollie&);
         bool operator!=(const Bordercollie&);
+        Bordercollie& operator!();
 
     private:
         string RACA;
